@@ -1,7 +1,6 @@
 //Basic Game Application
 //Version 2
 // Basic Object, Image, Movement
-// Astronaut moves to the right.
 // Threaded
 
 //K. Chun 8/2018
@@ -17,6 +16,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.tools.Tool;
 
 
 //*******************************************************************************
@@ -29,8 +29,8 @@ public class BasicGameApp implements Runnable {
    //You can set their initial values too
    
    //Sets the width and height of the program window
-	final int WIDTH = 10;
-	final int HEIGHT = 70;
+	final int WIDTH = 1000;
+	final int HEIGHT = 800;
 
    //Declare the variables needed for the graphics
 	public JFrame frame;
@@ -38,11 +38,14 @@ public class BasicGameApp implements Runnable {
    public JPanel panel;
    
 	public BufferStrategy bufferStrategy;
-	public Image astroPic;
+	public Image foxPic;
+    public Image harePic;
+    public Image flyPic;
+    public Image Background;
 
    //Declare the objects used in the program
    //These are things that are made up of more than one variable type
-	private Astronaut astro;
+	private Fox fox;
 
 
    // Main method definition
@@ -63,8 +66,11 @@ public class BasicGameApp implements Runnable {
        
       //variable and objects
       //create (construct) the objects needed for the game and load up 
-		astroPic = Toolkit.getDefaultToolkit().getImage("astronaut.png"); //load the picture
-		astro = new Astronaut(10,100);
+		foxPic = Toolkit.getDefaultToolkit().getImage("fox.png"); //load the picture
+        harePic = Toolkit.getDefaultToolkit().getImage("hare.jpg");
+        flyPic = Toolkit.getDefaultToolkit().getImage("monarch");
+        Background = Toolkit.getDefaultToolkit().getImage("Forest.jpg");
+		fox = new Fox (10,100);
 
 
 	}// BasicGameApp()
@@ -92,7 +98,7 @@ public class BasicGameApp implements Runnable {
 	public void moveThings()
 	{
       //calls the move( ) code in the objects
-		astro.move();
+		fox.move();
 
 	}
 	
@@ -141,9 +147,9 @@ public class BasicGameApp implements Runnable {
 	private void render() {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.clearRect(0, 0, WIDTH, HEIGHT);
-
-      //draw the image of the astronaut
-		g.drawImage(astroPic, astro.xpos, astro.ypos, astro.width, astro.height, null);
+        g.drawImage(Background, 0, 0, WIDTH, HEIGHT, null);
+      //draw the image of the foxes
+		g.drawImage(foxPic, fox.xpos, fox.ypos, fox.width, fox.height, null);
 
 		g.dispose();
 
