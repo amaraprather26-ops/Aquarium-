@@ -110,9 +110,10 @@ public class BasicGameApp implements Runnable {
         hare2.move();
 
         //when foxes collide they get disoriented
-        //rabbits cross past
+        //hares make a new hare
         // add carrots... when hare meets carrot, gets bigger
-        // hare x fox...fox gets bigger
+        // hare x fox...fox gets bigger, hare disapears
+        //
 	}
 	
    //Pauses or sleeps the computer for the amount specified in milliseconds
