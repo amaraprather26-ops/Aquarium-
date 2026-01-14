@@ -45,7 +45,10 @@ public class BasicGameApp implements Runnable {
 
    //Declare the objects used in the program
    //These are things that are made up of more than one variable type
-	private Fox fox;
+	private Fox fox1;
+    private Fox fox2;
+    private Hare hare1;
+    private Hare hare2;
 
 
    // Main method definition
@@ -70,7 +73,10 @@ public class BasicGameApp implements Runnable {
         harePic = Toolkit.getDefaultToolkit().getImage("hare.jpg");
         flyPic = Toolkit.getDefaultToolkit().getImage("monarch");
         Background = Toolkit.getDefaultToolkit().getImage("Forest.jpg");
-		fox = new Fox (10,100);
+		fox1 = new Fox (10,100);
+        fox2 = new Fox (500, 700);
+        hare1 = new Hare(20, 400, 4, 3, 60, 60);
+        hare2 = new Hare(750, 350, -2, -5, 45, 45);
 
 
 	}// BasicGameApp()
@@ -98,8 +104,15 @@ public class BasicGameApp implements Runnable {
 	public void moveThings()
 	{
       //calls the move( ) code in the objects
-		fox.move();
+		fox1.move();
+        fox2.move();
+        hare1.move();
+        hare2.move();
 
+        //when foxes collide they get disoriented
+        //rabbits cross past
+        // add carrots... when hare meets carrot, gets bigger
+        // hare x fox...fox gets bigger
 	}
 	
    //Pauses or sleeps the computer for the amount specified in milliseconds
@@ -149,7 +162,11 @@ public class BasicGameApp implements Runnable {
 		g.clearRect(0, 0, WIDTH, HEIGHT);
         g.drawImage(Background, 0, 0, WIDTH, HEIGHT, null);
       //draw the image of the foxes
-		g.drawImage(foxPic, fox.xpos, fox.ypos, fox.width, fox.height, null);
+		g.drawImage(foxPic, fox1.xpos, fox1.ypos, fox1.width, fox1.height, null);
+        g.drawImage(foxPic, fox2.xpos, fox2.ypos, fox2.width, fox2.height, null);
+        //draw images of the hares
+        g.drawImage(harePic, hare1.xpos, hare1.ypos, hare1.width, hare1.height, null);
+        g.drawImage(harePic, hare2.xpos, hare2.ypos, hare2.width, hare2.height, null);
 
 		g.dispose();
 

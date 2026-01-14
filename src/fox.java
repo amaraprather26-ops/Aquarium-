@@ -39,6 +39,22 @@ public class Fox {
         xpos = xpos + dx;
         ypos = ypos + dy;
 
+        if (ypos < 0 ){
+            dy = -dy;
+
+        }
+        if (ypos > 800){
+            dy = -dy;
+            // xpos = 100-xpos;
+        }
+        if (xpos < 0 ){
+            dx = -dx;
+            // ypos = 800 - ypos;
+        }
+        if (xpos > 1000 ){
+            dx=-dx;
+            // ypos = 800 - ypos;
+        }
     }
 }
 

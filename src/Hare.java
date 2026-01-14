@@ -19,13 +19,13 @@ public class Hare {
 
     //This is a SECOND constructor that takes 3 parameters.  This allows us to specify the hero's name and position when we build it.
     // if you put in a String, an int and an int the program will use this constructor instead of the one above.
-    public Hare (int pXpos, int pYpos) {
+    public Hare (int pXpos, int pYpos, int xSpeed, int ySpeed, int Width, int Height) {
         xpos = pXpos;
         ypos = pYpos;
-        dx =1;
-        dy =0;
-        width = 60;
-        height = 60;
+        dx = xSpeed;
+        dy = ySpeed;
+        width = Width;
+        height = Height;
         isAlive = true;
 
     } // constructor
@@ -34,6 +34,24 @@ public class Hare {
     public void move() {
         xpos = xpos + dx;
         ypos = ypos + dy;
+
+        if (ypos < 0 ){
+            ypos = 800;
+           // xpos = 1000-xpos;
+        }
+        if (ypos > 800){
+            ypos = 0;
+           // xpos = 100-xpos;
+        }
+        if (xpos < 0 ){
+            xpos = 1000;
+           // ypos = 800 - ypos;
+        }
+        if (xpos > 1000 ){
+            xpos = 0;
+           // ypos = 800 - ypos;
+        }
+
 
     }
 }
