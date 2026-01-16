@@ -49,7 +49,8 @@ public class BasicGameApp implements Runnable {
     private Fox fox2;
     private Hare hare1;
     private Hare hare2;
-
+    private Butterfly butterfly1;
+    private Butterfly butterfly2;
 
    // Main method definition
    // This is the code that runs first and automatically
@@ -77,7 +78,8 @@ public class BasicGameApp implements Runnable {
         fox2 = new Fox (500, 700);
         hare1 = new Hare(20, 400, 4, 3, 60, 60);
         hare2 = new Hare(750, 350, -2, -5, 45, 45);
-
+        butterfly1 = new Butterfly(100, 20);
+        butterfly2 = new Butterfly(850, 50);
 
 	}// BasicGameApp()
 
@@ -108,6 +110,8 @@ public class BasicGameApp implements Runnable {
         fox2.move();
         hare1.move();
         hare2.move();
+        butterfly1.move();
+        butterfly2.move();
 
         //when foxes collide they get disoriented
         //hares make a new hare
