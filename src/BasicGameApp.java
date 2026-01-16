@@ -74,10 +74,10 @@ public class BasicGameApp implements Runnable {
         harePic = Toolkit.getDefaultToolkit().getImage("hare.jpg");
         flyPic = Toolkit.getDefaultToolkit().getImage("monarch");
         Background = Toolkit.getDefaultToolkit().getImage("Forest.jpg");
-		fox1 = new Fox (10,100);
+		fox1 = new Fox (10,430);
         fox2 = new Fox (500, 700);
-        hare1 = new Hare(20, 400, 4, 3, 60, 60);
-        hare2 = new Hare(750, 350, -2, -5, 45, 45);
+        hare1 = new Hare(20, 450, 4, 3, 60, 60);
+        hare2 = new Hare(750, 500, -2, -5, 45, 45);
         butterfly1 = new Butterfly(100, 20);
         butterfly2 = new Butterfly(850, 50);
 

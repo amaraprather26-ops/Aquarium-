@@ -35,15 +35,16 @@ public class Hare {
         xpos = xpos + dx;
         ypos = ypos + dy;
 
-        if (ypos < 0 ){
-            ypos = 800;
+        if (ypos < 400){
+            dy=-dy;
            // xpos = 1000-xpos;
         }
-        if (ypos > 800){
-            ypos = 0;
+        if (ypos > 800-height){
+            dy=-dy;
            // xpos = 100-xpos;
         }
-        if (xpos < 0 ){
+        //make the hares loop if moving off the left or right sides
+        if (xpos < 0){
             xpos = 1000;
            // ypos = 800 - ypos;
         }

@@ -38,20 +38,20 @@ public class Fox {
     public void move() {
         xpos = xpos + dx;
         ypos = ypos + dy;
-
-        if (ypos < 0 ){
+        //makes the fox bounce of walls, but keep them withing the bottom half of the screen
+        if (ypos < 400 ){
             dy = -dy;
 
         }
-        if (ypos > 800){
+        if (ypos > 800-height){
             dy = -dy;
             // xpos = 100-xpos;
         }
-        if (xpos < 0 ){
-            dx = -dx;
+        if (xpos < 0){
+            dx=-dx;
             // ypos = 800 - ypos;
         }
-        if (xpos > 1000 ){
+        if (xpos > 1000){
             dx=-dx;
             // ypos = 800 - ypos;
         }
