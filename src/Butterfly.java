@@ -25,9 +25,9 @@ public class Butterfly {
             xpos = pXpos;
             ypos = pYpos;
             dx =1;
-            dy =0;
-            width = 60;
-            height = 60;
+            dy =2;
+            width =50;
+            height = 50;
             isAlive = true;
         } // constructor
 
@@ -35,6 +35,23 @@ public class Butterfly {
         public void move() {
             xpos = xpos + dx;
             ypos = ypos + dy;
+
+            if (ypos > 400){
+                dy=-dy;
+            }
+            if (ypos < 0){
+                dy=-dy;
+            }
+            //make the hares loop if moving off the left or right sides
+            if (xpos < 0){
+                xpos = 1000;
+                // ypos = 800 - ypos;
+            }
+            if (xpos > 1000 ){
+                xpos = 0;
+                // ypos = 800 - ypos;
+            }
+
         }
 
     }

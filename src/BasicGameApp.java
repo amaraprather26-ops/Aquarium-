@@ -72,14 +72,14 @@ public class BasicGameApp implements Runnable {
       //create (construct) the objects needed for the game and load up 
 		foxPic = Toolkit.getDefaultToolkit().getImage("fox.png"); //load the picture
         harePic = Toolkit.getDefaultToolkit().getImage("hare.jpg");
-        flyPic = Toolkit.getDefaultToolkit().getImage("monarch");
+        flyPic = Toolkit.getDefaultToolkit().getImage("monarch.jpg");
         Background = Toolkit.getDefaultToolkit().getImage("Forest.jpg");
-		fox1 = new Fox (10,430);
-        fox2 = new Fox (500, 700);
+		fox1 = new Fox (10,430, 1, 1);
+        fox2 = new Fox (500, 700,1 ,2);
         hare1 = new Hare(20, 450, 4, 3, 60, 60);
         hare2 = new Hare(750, 500, -2, -5, 45, 45);
-        butterfly1 = new Butterfly(100, 20);
-        butterfly2 = new Butterfly(850, 50);
+        butterfly1 = new Butterfly(10, 40);
+        butterfly2 = new Butterfly(600, 100);
 
 	}// BasicGameApp()
 
@@ -172,8 +172,10 @@ public class BasicGameApp implements Runnable {
         //draw images of the hares
         g.drawImage(harePic, hare1.xpos, hare1.ypos, hare1.width, hare1.height, null);
         g.drawImage(harePic, hare2.xpos, hare2.ypos, hare2.width, hare2.height, null);
-
-		g.dispose();
+        //draw images of the butterflies
+        g.drawImage(flyPic, butterfly1.xpos, butterfly1.ypos, butterfly1.width, butterfly1.height, null);
+        g.drawImage(flyPic, butterfly2.xpos, butterfly2.ypos, butterfly2.width, butterfly2.height, null);
+        g.dispose();
 
 		bufferStrategy.show();
 	}
