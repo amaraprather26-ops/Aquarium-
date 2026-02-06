@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Butterfly {
 
     //VARIABLE DECLARATION SECTION
@@ -9,8 +11,8 @@ public class Butterfly {
     public int dy;                    //the speed of the hero in the y direction
     public int width;
     public int height;
-    public boolean isAlive;            //a boolean to denote if the hero is alive or dead.
-
+    public boolean isAlive;//a boolean to denote if the hero is alive or dead.
+    public Rectangle hitbox;
 
     // METHOD DEFINITION SECTION
 
@@ -29,6 +31,7 @@ public class Butterfly {
             width =50;
             height = 50;
             isAlive = true;
+            hitbox = new Rectangle(xpos, ypos, width, height);
         } // constructor
 
         //The move method.  Everytime this is run (or "called") the hero's x position and y position change by dx and dy
@@ -51,6 +54,7 @@ public class Butterfly {
                 xpos = 0;
                 // ypos = 800 - ypos;
             }
+            hitbox = new Rectangle(xpos, ypos, width, height);
 
         }
 

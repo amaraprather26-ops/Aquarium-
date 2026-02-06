@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Hare {
     //VARIABLE DECLARATION SECTION
     //Here's where you state which variables you are going to use.
@@ -8,8 +10,8 @@ public class Hare {
     public int dy;                    //the speed of the hero in the y direction
     public int width;
     public int height;
-    public boolean isAlive;            //a boolean to denote if the hero is alive or dead.
-
+    public boolean isAlive;//a boolean to denote if the hero is alive or dead.
+    public Rectangle hitbox;
 
     // METHOD DEFINITION SECTION
 
@@ -27,6 +29,7 @@ public class Hare {
         width = Width;
         height = Height;
         isAlive = true;
+        hitbox = new Rectangle(xpos, ypos, width, height);
 
     } // constructor
 
@@ -52,6 +55,7 @@ public class Hare {
             xpos = 0;
            // ypos = 800 - ypos;
         }
+        hitbox = new Rectangle(xpos, ypos, width, height);
 
 
     }

@@ -112,13 +112,40 @@ public class BasicGameApp implements Runnable {
         hare2.move();
         butterfly1.move();
         butterfly2.move();
-
         //when foxes collide they get disoriented
+        foxCrash();
         //hares make a new hare
         // add carrots... when hare meets carrot, gets bigger
         // hare x fox...fox gets bigger, hare disapears
+        foxHare();
         //
 	}
+
+    public void foxCrash(){
+        if (fox1.hitbox.intersects(fox2.hitbox)){
+            fox1.dy =  -fox1.dy;
+            fox2.dy = -fox2.dy;
+            fox1.dx = -fox1.dx;
+            fox2.dx = -fox2.dx;
+        }
+    }
+    public void foxHare(){
+        if (fox1.hitbox.intersects(hare1.hitbox)){
+            hare1.isAlive = false;
+        }
+        if (fox1.hitbox.intersects(hare2.hitbox)){
+            hare2.isAlive = false;
+        }
+        if (fox2.hitbox.intersects(hare1.hitbox)){
+            hare1.isAlive = false;
+        }
+        if (fox2.hitbox.intersects(hare2.hitbox)){
+            hare2.isAlive = false;
+        }
+    }
+    public void hareCrash(){
+       // if(){}
+    }
 	
    //Pauses or sleeps the computer for the amount specified in milliseconds
    public void pause(int time ){
@@ -167,7 +194,9 @@ public class BasicGameApp implements Runnable {
 		g.clearRect(0, 0, WIDTH, HEIGHT);
         g.drawImage(Background, 0, 0, WIDTH, HEIGHT, null);
       //draw the image of the foxes
-		g.drawImage(foxPic, fox1.xpos, fox1.ypos, fox1.width, fox1.height, null);
+        if (fox1.isAlive = true) {
+            g.drawImage(foxPic, fox1.xpos, fox1.ypos, fox1.width, fox1.height, null);
+        }
         g.drawImage(foxPic, fox2.xpos, fox2.ypos, fox2.width, fox2.height, null);
         //draw images of the hares
         g.drawImage(harePic, hare1.xpos, hare1.ypos, hare1.width, hare1.height, null);
